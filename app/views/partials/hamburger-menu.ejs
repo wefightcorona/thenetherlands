@@ -1,16 +1,26 @@
-<%
-const isOnProfile = !locals.activePage || locals.activePage === 'helsetilstand';
-const isOnMap = locals.activePage === 'kart';
-const isOnPrivacyPolicy = locals.activePage === 'personvern';
-const isOnStats = locals.activePage === 'statistikk';
-%>
+<% const isOnProfile = !locals.activePage || locals.activePage ===
+'helsetilstand'; const isOnMap = locals.activePage === 'kaart'; const
+isOnPrivacyPolicy = locals.activePage === 'personvern'; const isOnStats =
+locals.activePage === 'statistikk'; %>
 
 <div class="hamburger-menu">
   <ul class="inner">
-    <li><a href="/" class="<%= isOnProfile ? 'active' : '' %>">Din helsetilstand</a></li>
-    <li><a href="/kart" class="<%= isOnMap ? 'active' : '' %>">Kart</a></li>
-    <li><a href="/statistikk" class="<%= isOnStats ? 'active' : '' %>">Statistikk</a></li>
-    <li><a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>">Personvern</a></li>
+    <li>
+      <a href="/" class="<%= isOnProfile ? 'active' : '' %>"
+        >Din helsetilstand</a
+      >
+    </li>
+    <li><a href="/kaart" class="<%= isOnMap ? 'active' : '' %>">Kaart</a></li>
+    <li>
+      <a href="/statistikk" class="<%= isOnStats ? 'active' : '' %>"
+        >Statistikk</a
+      >
+    </li>
+    <li>
+      <a href="/personvern" class="<%= isOnPrivacyPolicy ? 'active' : '' %>"
+        >Personvern</a
+      >
+    </li>
     <li><a href="/api-docs" target="_blank">API</a></li>
   </ul>
 </div>

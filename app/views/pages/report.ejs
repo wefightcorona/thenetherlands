@@ -51,9 +51,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-moon"></i></div>
               <div class="info-box__content">
-                <h2>Store mørketall</h2>
+                <h2>Grote donkere cijfers</h2>
                 <p>
-                  Spredningen av COVID-19 i landet vårt er ukjent. Hjelp oss med å skape en bedre oversikt.
+                  De verspreiding van COVID-19 in ons land is onbekend. Help ons een beter overzicht te creëren.
                 </p>
               </div>
             </div>
@@ -64,9 +64,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-hands-helping"></i></div>
               <div class="info-box__content">
-                <h2>Bidra anonymt</h2>
+                <h2>Anoniem bijdragen</h2>
                 <p>
-                  Rapporter din helsetilstand anonymt i skjemaet under.
+                  Meld uw gezondheidstoestand anoniem in onderstaand formulier.
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-microscope"></i></div>
               <div class="info-box__content">
-                <h2>Innsikt til alle</h2>
+                <h2>Inzicht voor iedereen</h2>
                 <p>
-                  Dataene er åpne for alle. Se kart og grafer, eller last ned dataene og gjør dine egne analyser.
+                  De gegevens zijn voor iedereen toegankelijk. Bekijk kaarten en grafieken of download de gegevens en voer uw eigen analyse uit.
                 </p>
               </div>
             </div>
@@ -90,8 +90,8 @@
             <div>
               <div class="info-box__icon"><i class="fa fa-code"></i></div>
               <div class="info-box__content">
-                <h2>Alt er åpent</h2>
-                <p>Tjenesten er åpen kildekode og laget i dugnadsånd. Du kan bidra i utviklingen.</p>
+                <h2>Alles is open</h2>
+                <p>De service is open source en gemaakt in de geest. Je kunt helpen bij de ontwikkeling.</p>
               </div>
             </div>
           </div>
@@ -101,50 +101,50 @@
             <div class="stats__number">
               <%= numberWithSpaces(aggregated.numberOfReports) %>
             </div>
-            <div class="stats__description">Totalt innsendte</div>
+            <div class="stats__description">Volledig ingediend</div>
           </div>
           <div class="info-box stats">
             <div class="stats__number">
               <%= numberWithSpaces(aggregated.numberOfConfirmedInfected) %> <span class="delimiter">/</span>
               <%= numberWithSpaces(aggregated.numberOfTested) %>
             </div>
-            <div class="stats__description">Smittede / har blitt testet</div>
+            <div class="stats__description">Geïnfecteerd / is getest</div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfContacts) %></div>
-            <div class="stats__description">I nærkontakt med smittet</div>
+            <div class="stats__description">In nauw contact met de geïnfecteerden</div>
           </div>
           <div class="info-box stats">
             <div class="stats__number"><%= numberWithSpaces(aggregated.numberOfPeopleShowingSymptoms) %></div>
-            <div class="stats__description">Har symptomer</div>
+            <div class="stats__description">Heeft symptomen</div>
           </div>
           <!-- Outcommented until we have added stats on the map page
-          <a href="/kart" class="info-box link-to-stats">
+          <a href="/kaart" class="info-box link-to-stats">
             <i class="fas fa-chevron-right"></i>
           </a>
           -->
         </div>
         <% if(locals.didNotAcceptPrivacyPolicy) {%>
           <div class="alert alert-danger" role="alert">
-            Du må godkjenne personvernerklæringen for å rapportere dine data.
+            U moet de privacyverklaring goedkeuren om uw gegevens te melden.
           </div>
         <% } %>
-        <h1><%= profile ? 'Din helsetilstand' : 'Rapporter din helsetilstand' %></h1>
+        <h1><%= profile ? 'Din helsetilstand' : 'Meld uw gezondheidstoestand' %></h1>
         <% if(locals.success) {%>
           <div class="alert alert-success" role="alert">
-            Takk for ditt svar! Benytt denne lenken hvis helsetilstanden din endrer seg: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>. 
+            Bedankt voor je reactie! Gebruik deze link als uw gezondheidstoestand verandert: <a target="_blank" href="/helsetilstand/<%= passcode %>">coronastatus.no/helsetilstand/<%= passcode %></a>.
           </div>
         <% } else { %>
-          <p class="slogan">Bli med på Norges viktigste dugnad! Selv om du er frisk håper vi du sender inn skjemaet – det er også verdifull informasjon!</p>
+          <p class="slogan">Ga met ons mee op de belangrijkste dag van Noorwegen! Zelfs als u gezond bent, hopen we dat u het formulier indient - er is ook waardevolle informatie!</p>
         <% } %>
         <%- include('partials/share') -%>
         <form method="post" action="/">
           <h2>Geografi og demografi</h2>
           <div class="row">
             <div class="col-5 col-12-small input-block">
-              <label class="with-top-margin" for="age">Din alder</label>
+              <label class="with-top-margin" for="age">Uw leeftijd</label>
               <select required name="age" id="Age">
-                <option value="" disabled selected>Velg din alder</option>
+                <option value="" disabled selected>Kies je leeftijd</option>
                 <% for(var i=0; i<100; i+=10) {
                   const ageSpan = `${i} - ${i + 9}`;
                 %>
@@ -321,7 +321,7 @@
     if (symptoms != null && symptoms.length > 0) {
       document.getElementById('symptom-start-question').style.display = 'block';
     }
-    
+
     changeTestResultDisplay(document.getElementById("been-tested-yes").checked);
 
     // Remove query params from url

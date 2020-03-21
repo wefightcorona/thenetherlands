@@ -33,7 +33,7 @@ app.set('views', [
 ]);
 
 app.use('/', reportRoutes);
-app.use('/kart', mapRoutes);
+app.use('/kaart', mapRoutes);
 app.use('/api', apiRoutes);
 app.use('/statistikk', statisticsRoutes);
 
